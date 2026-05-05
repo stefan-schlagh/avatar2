@@ -172,9 +172,9 @@ def _handle_remote_memory_write_message_nvic(self, message):
 
 
 def load_plugin(avatar):
-    if avatar.arch != ARMV7M:
-        avatar.log.error("Tried to load armv7-m interrupt plugin " +
-                         "with mismatching architecture")
+    #if avatar.arch != ARMV7M:
+    #    avatar.log.error("Tried to load armv7-m interrupt plugin " +
+    #                     "with mismatching architecture")
 
     avatar.v7m_irq_rx_queue_name = '/avatar_v7m_irq_rx_queue'
     avatar.v7m_irq_tx_queue_name = '/avatar_v7m_irq_tx_queue'

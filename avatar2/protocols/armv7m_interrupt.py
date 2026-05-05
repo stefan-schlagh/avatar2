@@ -115,10 +115,10 @@ class ARMV7MInterruptProtocol(Thread):
             # the tx-queue for qemu is the rx-queue for avatar and vice versa
             self._origin.protocols.monitor.execute_command(
                 'avatar-armv7m-enable-irq',
-                {'irq_rx_queue_name': self._tx_queue_name,
-                 'irq_tx_queue_name': self._rx_queue_name,
-                 'rmem_rx_queue_name': rmem_tx_qname,
-                 'rmem_tx_queue_name': rmem_rx_qname
+                {'irq-rx-queue-name': self._tx_queue_name,
+                 'irq-tx-queue-name': self._rx_queue_name,
+                 'rmem-rx-queue-name': rmem_tx_qname,
+                 'rmem-tx-queue-name': rmem_rx_qname
                  }
             )
         else:

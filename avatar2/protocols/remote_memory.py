@@ -129,6 +129,7 @@ class RemoteMemoryProtocol(object):
 
         :return True on success, else False
         """
+        print(f"connect to _rx_queue: {self.rx_queue_name}")
         try:
             self._rx_queue = MessageQueue(self.rx_queue_name, flags=O_RDONLY,
                                           read=True, write=False)
@@ -137,6 +138,7 @@ class RemoteMemoryProtocol(object):
             self.log.exception("Unable to create rx_queue:")
             return False
 
+        print(f"connect to _tx_queue: {self.tx_queue_name}")
         try:
             self._tx_queue = MessageQueue(self.tx_queue_name, flags=O_WRONLY,
                                           read=False, write=True)

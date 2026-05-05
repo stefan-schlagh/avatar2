@@ -139,8 +139,7 @@ class CoreSightProtocol(Thread):
 
     def connect(self):
         if not isinstance(self._origin.protocols.monitor, OpenOCDProtocol):
-            raise Exception(("CoreSightProtocol requires OpenOCDProtocol ")
-                            ("to be present."))
+            raise Exception("CoreSightProtocol requires OpenOCDProtocol to be present.")
 
     def has_bits_to_read(self, b, n):
         return b.len - b.pos > n
