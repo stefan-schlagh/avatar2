@@ -168,7 +168,7 @@ class ARMV7MInterruptProtocol(Thread):
             self.log.info("Injecting interrupt %d" % interrupt_number)
             self._origin.protocols.monitor.execute_command(
                 'avatar-armv7m-inject-irq',
-                {'num_irq': interrupt_number, 'num_cpu': cpu_number}
+                {'num-irq': interrupt_number, 'num-cpu': cpu_number}
             )
 
     def set_vector_table_base(self, base, cpu_number=0):
@@ -176,7 +176,7 @@ class ARMV7MInterruptProtocol(Thread):
             self.log.info("Setting vector table base to 0x%x" % base)
             self._origin.protocols.monitor.execute_command(
                 'avatar-armv7m-set-vector-table-base',
-                {'base': base, 'num_cpu': cpu_number}
+                {'base': base, 'num-cpu': cpu_number}
             )
 
     def send_interrupt_exit_response(self, id, success):
