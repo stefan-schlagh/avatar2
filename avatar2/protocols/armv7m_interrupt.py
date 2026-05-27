@@ -151,7 +151,7 @@ class ARMV7MInterruptProtocol(Thread):
                 "Disable handling of irq return for %d" % interrupt_number)
             self._origin.protocols.monitor.execute_command(
                 'avatar-armv7m-ignore-irq-return',
-                {'num_irq': interrupt_number}
+                {'num-irq': interrupt_number}
             )
 
     def unignore_interrupt_return(self, interrupt_number):
@@ -160,7 +160,7 @@ class ARMV7MInterruptProtocol(Thread):
                 "Re-enable handling of irq return for %d" % interrupt_number)
             self._origin.protocols.monitor.execute_command(
                 'avatar-armv7m-unignore-irq-return',
-                {'num_irq': interrupt_number}
+                {'num-irq': interrupt_number}
             )
 
     def inject_interrupt(self, interrupt_number, cpu_number=0):
